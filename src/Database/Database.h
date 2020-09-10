@@ -7,6 +7,8 @@
 
 #include <map>
 
+#include <mysql/mysql.h>
+
 class Car;
 class Database {
 public:
@@ -19,6 +21,8 @@ public:
     void deleteCar(int id);
 
 private:
+    MYSQL *con;
+
     std::map<int, Car*> itsCars;
 };
 
