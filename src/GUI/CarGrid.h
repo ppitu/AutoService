@@ -8,10 +8,12 @@
 #include <wx/wx.h>
 #include <wx/grid.h>
 #include <wx/panel.h>
+#include <wx/notebook.h>
 
 class CarGrid : public wxGrid {
 public:
     CarGrid(wxPanel *panel);
+    CarGrid(wxNotebook *notebook);
 };
 
 

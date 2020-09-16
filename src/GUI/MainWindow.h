@@ -7,6 +7,7 @@
 
 #include <wx/wx.h>
 #include <wx/panel.h>
+#include <wx/notebook.h>
 
 class MainWindow : public wxFrame {
 public:

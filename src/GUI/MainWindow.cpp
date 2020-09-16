@@ -5,15 +5,17 @@
 #include "MainWindow.h"
 
 #include "CarGrid.h"
+#include "MainNotebook.h"
 
 MainWindow::MainWindow(const wxString &title) : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(250, 150))
 {
     mainPanel = new wxPanel(this, -1);
     mainSizer = new wxBoxSizer(wxVERTICAL);
 
-    CarGrid *carGrid = new CarGrid(mainPanel);
+    MainNotebook *mainNotebook = new MainNotebook(mainPanel);
 
-    mainSizer->Add(carGrid, 1, wxALL | wxEXPAND, 5);
+    mainSizer->Add(mainNotebook, 1, wxALL | wxEXPAND, 5);
 
     mainPanel->SetSizer(mainSizer);
+    SetMinSize(wxSize(1000, 600));
 }
