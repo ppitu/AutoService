@@ -15,12 +15,12 @@ public:
     Database();
     virtual ~Database();
     Car* getCar(int carId);
-    void addCar(int carid, Car*);
+    virtual void addCar(Car *car);
     void clear();
     bool isInDatabase(int id);
     void deleteCar(int id);
 
-private:
+protected:
     MYSQL *con;
 
     std::map<int, Car*> itsCars;

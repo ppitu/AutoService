@@ -15,7 +15,7 @@ extern Database database;
 BOOST_AUTO_TEST_SUITE(editCarTransactionSuite)
     BOOST_AUTO_TEST_CASE(editCar)
     {
-        int id = 1;
+        int id = 13;
         AddCar t(id, "Volvo", "Nowy samochod", 2009, "Benzyna", 3400.4, 180000, 240, "niebieski");
         t.Execute();
 

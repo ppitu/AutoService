@@ -6,9 +6,8 @@
 
 #include "Car.h"
 #include "Database/Database.h"
+#include "Database/DatabaseCar.h"
 #include <utility>
-
-extern Database database;
 
 AddCar::~AddCar()
 {
@@ -17,8 +16,9 @@ AddCar::~AddCar()
 
 void AddCar::Execute() {
     Car* car = new Car(itsId, brand, description, manufacture_year, petrol, price, mileage, car_power, color);
+    Database *database = new DatabaseCar();
 
-    database.addCar(itsId, car);
+    database->addCar(car);
 }
 
 AddCar::AddCar(int carid, std::string _brand, std::string _description, int _manufacture_year,

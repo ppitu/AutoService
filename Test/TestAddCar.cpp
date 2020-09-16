@@ -9,17 +9,18 @@
 #include "../src/Car.h"
 #include "../src/AddCar.h"
 #include "Database/Database.h"
-
-extern Database database;
+#include "Database/DatabaseCar.h"
 
 BOOST_AUTO_TEST_SUITE(addCarTransactionSuite)
     BOOST_AUTO_TEST_CASE(addCar)
     {
-        int id = 1;
+        int id = 10;
         AddCar t(id, "Volvo", "Nowy samochod", 2009, "Benzyna", 3400.4, 180000, 240, "niebieski");
         t.Execute();
 
-        Car* car = database.getCar(id);
+        Database *database = new DatabaseCar();
+
+        Car* car = database->getCar(id);
 
         BOOST_CHECK_EQUAL(car->getBrand(), "Volvo");
         BOOST_CHECK_EQUAL(car->getCarPower(), 240);
