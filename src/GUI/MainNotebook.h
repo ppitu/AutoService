@@ -9,17 +9,21 @@
 
 #include "wx/panel.h"
 #include "wx/notebook.h"
-
+#include "wx/button.h"
 
 class MainNotebook : public wxNotebook {
 public:
     MainNotebook(wxPanel *panel);
+
+    void OnQuit(wxCommandEvent& event);
+    void OnCarDialog(wxCommandEvent& event);
 
 private:
     wxPanel *mainPanel;
     wxBoxSizer *mainSizer;
 
     CarGrid *carGrid;
+
 };
 
 

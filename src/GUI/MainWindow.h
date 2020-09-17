@@ -9,6 +9,11 @@
 #include <wx/panel.h>
 #include <wx/notebook.h>
 
+enum
+{
+    ID_CAR_DIALOG = wxID_HIGHEST + 1
+};
+
 class MainWindow : public wxFrame {
 public:
     MainWindow(const wxString& title);
@@ -16,6 +21,9 @@ public:
 private:
     wxPanel *mainPanel;
     wxBoxSizer *mainSizer;
+
+
+    DECLARE_EVENT_TABLE()
 };
 
 

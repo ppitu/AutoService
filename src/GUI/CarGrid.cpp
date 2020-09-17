@@ -6,6 +6,7 @@
 
 CarGrid::CarGrid(wxPanel *panel) : wxGrid(panel, wxID_ANY) {
     CreateGrid(10, 10);
+    SetRowLabelSize(1);
 
 }
 
